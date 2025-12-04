@@ -65,6 +65,15 @@ def run_tx_predict(args: ap.ArgumentParser):
     import torch
     import yaml
 
+    import numpy as np
+    import torch.serialization as ts
+    
+    ts.add_safe_globals([
+        np.core.multiarray.scalar,
+        np.dtype,                
+        np.dtypes.Int64DType,    
+    ])
+
     # Cell-eval for metrics computation
     from cell_eval import MetricsEvaluator
     from cell_eval.utils import split_anndata_on_celltype
