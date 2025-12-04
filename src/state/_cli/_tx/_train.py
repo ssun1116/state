@@ -21,6 +21,16 @@ def run_tx_train(cfg: DictConfig):
 
     import lightning.pytorch as pl
     import torch
+
+    import numpy as np
+    import torch.serialization as ts
+    
+    ts.add_safe_globals([
+        np.core.multiarray.scalar,
+        np.dtype,                
+        np.dtypes.Int64DType,    
+    ])
+
     from cell_load.data_modules import PerturbationDataModule
     from cell_load.utils.modules import get_datamodule
     from lightning.pytorch.loggers import WandbLogger
