@@ -6,6 +6,7 @@ from ._tx import (
     run_tx_preprocess_infer,
     run_tx_preprocess_train,
     run_tx_train,
+    run_tx_scramble
 )
 
 __all__ = [
@@ -14,6 +15,7 @@ __all__ = [
     "run_tx_train",
     "run_tx_predict",
     "run_tx_infer",
+    "run_tx_scramble",
     "run_tx_preprocess_train",
     "run_tx_preprocess_infer",
     "run_emb_fit",

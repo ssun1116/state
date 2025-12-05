@@ -5,6 +5,7 @@ from ._predict import add_arguments_predict, run_tx_predict
 from ._preprocess_infer import add_arguments_preprocess_infer, run_tx_preprocess_infer
 from ._preprocess_train import add_arguments_preprocess_train, run_tx_preprocess_train
 from ._train import add_arguments_train, run_tx_train
+from ._scramble import add_arguments_scramble, run_tx_scramble
 
 __all__ = [
     "run_tx_train",
@@ -12,6 +13,7 @@ __all__ = [
     "run_tx_infer",
     "run_tx_preprocess_train",
     "run_tx_preprocess_infer",
+    "run_tx_scramble",
     "add_arguments_tx",
 ]
 
@@ -24,3 +26,4 @@ def add_arguments_tx(parser: ap.ArgumentParser):
     add_arguments_infer(subparsers.add_parser("infer"))
     add_arguments_preprocess_train(subparsers.add_parser("preprocess_train"))
     add_arguments_preprocess_infer(subparsers.add_parser("preprocess_infer"))
+    add_arguments_scramble(subparsers.add_parser("scramble"))
